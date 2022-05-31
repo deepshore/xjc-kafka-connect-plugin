@@ -75,6 +75,24 @@ public class KafkaConnectPlugin extends AbstractParameterizablePlugin {
   Map<String, XmlTypeState> xmlTypeLookup;
   Map<JType, DefinedTypeState> definedTypeStateLookup = new HashMap<>();
 
+  private int decimalScale;
+
+  public KafkaConnectPlugin() {
+    this.decimalScale = 4;
+  }
+
+  public int getDecimalScale() {
+    return decimalScale;
+  }
+
+  public void setDecimalScale(int decimalScale) {
+    this.decimalScale = decimalScale;
+  }
+
+  public void setDecimalScale(String decimalScale) {
+    this.decimalScale = Integer.valueOf(decimalScale);
+  }
+
   @Override
   public String getOptionName() {
     return "Xconnect";
@@ -154,7 +172,7 @@ public class KafkaConnectPlugin extends AbstractParameterizablePlugin {
     add(result, this.types.schemaBuilder().staticInvoke("int64"), this.types.schema().staticRef("INT64_SCHEMA"), "toInt64", "fromInt64BigInteger", codeModel, BigInteger.class);
     add(result, this.types.schemaBuilder().staticInvoke("bytes"), this.types.schema().staticRef("BYTES_SCHEMA"), "toBytes", "fromBytes", codeModel, byte[].class);
     add(result, this.types.schemaBuilder().staticInvoke("string"), this.types.schema().staticRef("STRING_SCHEMA"), "toString", "fromString", codeModel, String.class);
-    add(result, this.types.decimal().staticInvoke("builder").arg(JExpr.lit(12)), null, "toDecimal", "fromDecimal", codeModel, BigDecimal.class);
+    add(result, this.types.decimal().staticInvoke("builder").arg(JExpr.lit(this.decimalScale)), null, "toDecimal", "fromDecimal", codeModel, BigDecimal.class);
 
     add(result, this.types.connectableHelper().staticInvoke("qnameBuilder"), null, "toQname", "fromQname", codeModel, QName.class);
     add(result, this.types.schemaBuilder().staticInvoke("int64"), this.types.schema().staticRef("IN64_SCHEMA"), "toDuration", "fromDuration", codeModel, Duration.class);

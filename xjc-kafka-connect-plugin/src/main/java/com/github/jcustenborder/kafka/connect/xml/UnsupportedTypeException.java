@@ -19,7 +19,7 @@ import com.sun.codemodel.JFieldVar;
 import com.sun.codemodel.JType;
 import com.sun.tools.xjc.outline.ClassOutline;
 
-class UnsupportedTypeException extends RuntimeException {
+public class UnsupportedTypeException extends RuntimeException {
   final ClassOutline classOutline;
   final JFieldVar field;
   final JType parentType;

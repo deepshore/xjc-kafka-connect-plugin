@@ -32,7 +32,7 @@ import java.util.Set;
 
 @Value.Immutable
 @SuppressFBWarnings
-interface Types {
+public interface Types {
   static Types build(JCodeModel codeModel) {
     JClass mapClass = codeModel.ref(Map.class);
     JClass qNameClass = codeModel.ref(QName.class);

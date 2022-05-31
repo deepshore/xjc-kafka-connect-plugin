@@ -128,6 +128,7 @@
                                 <arg>-XsimpleEquals</arg>
 <!--                                <arg>-XhashCode</arg>-->
                                 <arg>-Xconnect</arg>
+                                <arg>-Xconnect-decimalScale=2</arg>
                             </args>
                             <plugins>
                                 <plugin>

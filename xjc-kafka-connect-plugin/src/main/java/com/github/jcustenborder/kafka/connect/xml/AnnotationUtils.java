@@ -33,7 +33,7 @@ import java.lang.reflect.Method;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-class AnnotationUtils {
+public class AnnotationUtils {
   private static final Logger log = LoggerFactory.getLogger(AnnotationUtils.class);
 
 
@@ -73,13 +73,13 @@ class AnnotationUtils {
     final Map<String, Object> xmlElementValues = xmlElement(codeModel, field);
 
     if (null != xmlElementValues && !xmlElementValues.isEmpty()) {
-      return (boolean) xmlElementValues.getOrDefault("required", false);
+      return (boolean) xmlElementValues.getOrDefault("required", Boolean.FALSE);
     }
 
     final Map<String, Object> xmlAttributeValues = xmlAttribute(codeModel, field);
 
     if (null != xmlAttributeValues && !xmlAttributeValues.isEmpty()) {
-      return (boolean) xmlAttributeValues.getOrDefault("required", false);
+      return (boolean) xmlAttributeValues.getOrDefault("required", Boolean.FALSE);
     }
 
     return false;
@@ -148,16 +148,16 @@ class AnnotationUtils {
 
             if (boolean.class.equals(method.getReturnType())) {
               log.trace("annotationAttributes() - Parsing value for '{}' to '{}'. stringValue = '{}'", method.getName(), method.getReturnType(), stringValue);
-              value = Boolean.parseBoolean(stringValue);
+              value = Boolean.valueOf(stringValue);
             } else if (String.class.equals(method.getReturnType()) || Class.class.equals(method.getReturnType())) {
               value = stringValue.replaceAll("^\\\"(.*)\\\"$", "$1");
               if ("\u0000".equals(value)) {
                 continue;
               }
             } else if (long.class.equals(method.getReturnType())) {
-              value = Long.parseLong(stringValue);
+              value = Long.valueOf(stringValue);
             } else if (int.class.equals(method.getReturnType())) {
-              value = Integer.parseInt(stringValue);
+              value = Integer.valueOf(stringValue);
             } else {
               throw new IllegalStateException(
                   String.format("Could not parse type for %s.%s: %s", cls.getName(), method.getName(), method.getReturnType().getName())

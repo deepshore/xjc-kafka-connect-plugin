@@ -23,6 +23,6 @@ import java.util.List;
 
 @Value.Immutable
 @SuppressFBWarnings
-interface StaticTypeState extends State {
+public interface StaticTypeState extends State {
   List<JType> types();
 }
