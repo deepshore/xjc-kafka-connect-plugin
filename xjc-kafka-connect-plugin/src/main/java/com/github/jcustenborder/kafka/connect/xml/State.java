@@ -19,7 +19,7 @@ import com.sun.codemodel.JExpression;
 
 import java.util.List;
 
-interface State {
+public interface State {
   /**
    * Reference to a schema for this type. For example Schema.STRING
    *

@@ -21,6 +21,6 @@ import org.immutables.value.Value;
 
 @Value.Immutable
 @SuppressFBWarnings
-interface DefinedTypeState extends State {
+public interface DefinedTypeState extends State {
   JType type();
 }

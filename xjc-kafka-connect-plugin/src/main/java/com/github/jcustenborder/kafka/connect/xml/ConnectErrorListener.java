@@ -24,7 +24,7 @@ import org.xml.sax.SAXParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-class ConnectErrorListener implements ErrorListener {
+public class ConnectErrorListener implements ErrorListener {
   private static final Logger log = LoggerFactory.getLogger(ConnectErrorListener.class);
   private final List<SAXParseException> parseExceptions = new ArrayList<>();
 

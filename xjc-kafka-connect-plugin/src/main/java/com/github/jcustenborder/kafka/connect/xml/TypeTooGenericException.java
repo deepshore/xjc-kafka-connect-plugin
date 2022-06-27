@@ -19,7 +19,7 @@ import com.sun.codemodel.JFieldVar;
 import com.sun.codemodel.JType;
 import com.sun.tools.xjc.outline.ClassOutline;
 
-class TypeTooGenericException extends UnsupportedTypeException {
+public class TypeTooGenericException extends UnsupportedTypeException {
   public TypeTooGenericException(ClassOutline classOutline,
                                  JFieldVar field,
                                  JType parentType,

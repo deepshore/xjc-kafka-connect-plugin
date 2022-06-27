@@ -24,7 +24,7 @@ import java.util.List;
 
 @Value.Immutable
 @SuppressFBWarnings
-interface FieldState extends State {
+public interface FieldState extends State {
   /**
    * Name of the field in the xml document.
    * @return

@@ -22,7 +22,7 @@ import java.util.List;
 
 @Value.Immutable
 @SuppressFBWarnings
-interface XmlTypeState extends State {
+public interface XmlTypeState extends State {
   /**
    * Xml Types
    * @return

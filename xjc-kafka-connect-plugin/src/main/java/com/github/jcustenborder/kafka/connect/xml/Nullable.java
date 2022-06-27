@@ -15,5 +15,5 @@
  */
 package com.github.jcustenborder.kafka.connect.xml;
 
-@interface Nullable {
+public @interface Nullable {
 }
