@@ -95,8 +95,13 @@
         </dependency>
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>jaxb2-basics-annotate</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics</artifactId>
-            <version>0.11.1</version>
+            <version>0.13.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -124,8 +129,10 @@
                             <generateDirectory>target/generated-test-sources/books.xsd</generateDirectory>
                             <!--<forceRegenerate>true</forceRegenerate>-->
                             <markGenerated>false</markGenerated>
+                            <extension>true</extension>
                             <args>
                                 <arg>-XsimpleEquals</arg>
+                                <arg>-Xannotate</arg>
 <!--                                <arg>-XhashCode</arg>-->
                                 <arg>-Xconnect</arg>
                             </args>
@@ -134,6 +141,11 @@
                                     <groupId>org.jvnet.jaxb2_commons</groupId>
                                     <artifactId>jaxb2-basics</artifactId>
                                     <version>0.11.1</version>
+                                </plugin>
+                                <plugin>
+                                    <groupId>org.jvnet.jaxb2_commons</groupId>
+                                    <artifactId>jaxb2-basics-annotate</artifactId>
+                                    <version>1.1.0</version>
                                 </plugin>
                                 <plugin>
                                     <groupId>${project.groupId}</groupId>

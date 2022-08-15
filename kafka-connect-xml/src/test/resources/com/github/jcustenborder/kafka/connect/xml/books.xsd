@@ -1,4 +1,7 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+            xmlns:annox="http://annox.dev.java.net"
+            jaxb:extensionBindingPrefixes="annox"
             targetNamespace="urn:books"
             xmlns:bks="urn:books">
 
@@ -16,7 +19,24 @@
     <xsd:complexType name="BookForm">
         <xsd:sequence>
             <xsd:element name="test_boolean" type="xsd:boolean"/>
-            <xsd:element name="author" type="xsd:string"/>
+            <xsd:element name="author" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">asdoaskdoaksdoas
+
+                    asdasdasd
+
+                        asd
+                        as
+                        das
+                        d
+
+
+                    </xsd:documentation>
+                    <xsd:appinfo>
+                        <annox:annotate target="field" documentation="asdasdassd">@XmlDoc</annox:annotate>
+                    </xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
             <xsd:element name="title" type="xsd:string"/>
             <xsd:element name="genre" type="xsd:string"/>
             <xsd:element name="price" type="xsd:float"/>

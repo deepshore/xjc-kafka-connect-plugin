@@ -10,7 +10,6 @@
     </book>
 
     <book id="bk002">
-        <author>Poet</author>
         <title>The Poet's First Poem</title>
         <genre>Poem</genre>
         <price>24.95</price>
