@@ -27,7 +27,7 @@
     </parent>
     <groupId>com.github.jcustenborder.kafka.connect</groupId>
     <artifactId>kafka-connect-xml-parent</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.2.15-SNAPSHOT</version>
     <name>kafka-connect-xml-parent</name>
     <url>https://github.com/jcustenborder/kafka-connect-xml-parent</url>
     <inceptionYear>2017</inceptionYear>
@@ -110,7 +110,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.1.8</version>
+            <version>${logback.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -175,8 +175,8 @@
                 <version>3.5.1</version>
                 <inherited>true</inherited>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -224,9 +224,9 @@
                 </dependencies>
                 <executions>
                     <execution>
-                        <phase>test-compile</phase>
+                        <phase>deploy</phase>
                         <goals>
-                            <goal>check</goal>
+                            <goal>spotbugs</goal>
                         </goals>
                     </execution>
                 </executions>

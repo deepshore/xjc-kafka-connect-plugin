@@ -23,10 +23,10 @@
     <parent>
         <groupId>com.github.jcustenborder.kafka.connect</groupId>
         <artifactId>kafka-connect-xml-parent</artifactId>
-        <version>0.2-SNAPSHOT</version>
+        <version>0.2.15-SNAPSHOT</version>
     </parent>
     <artifactId>kafka-connect-xml</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.2.15-SNAPSHOT</version>
     <name>kafka-connect-xml</name>
     <url>https://github.com/jcustenborder/xjc-kafka-connect-plugin</url>
     <inceptionYear>2017</inceptionYear>
@@ -122,11 +122,9 @@
                                 <include>*.xsd</include>
                             </schemaIncludes>
                             <generateDirectory>target/generated-test-sources/books.xsd</generateDirectory>
-                            <!--<forceRegenerate>true</forceRegenerate>-->
                             <markGenerated>false</markGenerated>
                             <args>
                                 <arg>-XsimpleEquals</arg>
-<!--                                <arg>-XhashCode</arg>-->
                                 <arg>-Xconnect</arg>
                             </args>
                             <plugins>
@@ -143,57 +141,6 @@
                             </plugins>
                         </configuration>
                     </execution>
-                    <!--<execution>-->
-                    <!--<id>cd-list</id>-->
-
-                    <!--<goals>-->
-                    <!--<goal>generate</goal>-->
-                    <!--</goals>-->
-                    <!--<configuration>-->
-                    <!--<schemaIncludes>-->
-                    <!--<include>cd-list.xsd</include>-->
-                    <!--</schemaIncludes>-->
-                    <!--<generateDirectory>target/generated-test-sources/cd-list.xsd</generateDirectory>-->
-                    <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--<execution>-->
-                    <!--<id>inventory</id>-->
-                    <!--<goals>-->
-                    <!--<goal>generate</goal>-->
-                    <!--</goals>-->
-
-                    <!--<configuration>-->
-                    <!--<schemaIncludes>-->
-                    <!--<include>InventoryV2.0.0.xsd</include>-->
-                    <!--</schemaIncludes>-->
-                    <!--<generateDirectory>target/generated-test-sources/InventoryV2.0.0.xsd</generateDirectory>-->
-                    <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--<execution>-->
-                    <!--<id>recipe</id>-->
-                    <!--<goals>-->
-                    <!--<goal>generate</goal>-->
-                    <!--</goals>-->
-
-                    <!--<configuration>-->
-                    <!--<schemaIncludes>-->
-                    <!--<include>recipe.xsd</include>-->
-                    <!--</schemaIncludes>-->
-                    <!--<generateDirectory>target/generated-test-sources/recipe.xsd</generateDirectory>-->
-                    <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--<execution>-->
-                    <!--<id>shiporder</id>-->
-                    <!--<goals>-->
-                    <!--<goal>generate</goal>-->
-                    <!--</goals>-->
-                    <!--<configuration>-->
-                    <!--<schemaIncludes>-->
-                    <!--<include>shiporder.xsd</include>-->
-                    <!--</schemaIncludes>-->
-                    <!--<generateDirectory>target/generated-test-sources/shiporder.xsd</generateDirectory>-->
-                    <!--</configuration>-->
-                    <!--</execution>-->
                 </executions>
             </plugin>
         </plugins>
