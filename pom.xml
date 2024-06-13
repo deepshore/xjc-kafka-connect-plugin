@@ -63,7 +63,8 @@
         <url>https://github.com/jcustenborder/kafka-connect-xml-parent/issues</url>
     </issueManagement>
     <properties>
-        <jaxb.version>2.3.1</jaxb.version>
+        <java.version>17</java.version>
+        <jaxb.version>4.0.5</jaxb.version>
         <slf4j.version>1.7.21</slf4j.version>
         <junit.version>5.0.0</junit.version>
         <guava.version>30.1.1-jre</guava.version>
@@ -71,6 +72,7 @@
         <logback.version>1.2.0</logback.version>
         <junit.surefire.plugin.version>1.0.0</junit.surefire.plugin.version>
         <mockito.version>1.10.19</mockito.version>
+        <kafka.version>3.7.0</kafka.version>
     </properties>
     <dependencies>
         <dependency>
@@ -175,8 +177,8 @@
                 <version>3.5.1</version>
                 <inherited>true</inherited>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -231,32 +233,6 @@
                     </execution>
                 </executions>
 
-            </plugin>
-            <plugin>
-                <groupId>com.mycila</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <version>3.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
-                    <properties>
-                        <owner>Jeremy Custenborder</owner>
-                        <email>jcustenborder@gmail.com</email>
-                    </properties>
-                    <excludes>
-                        <exclude>**/README</exclude>
-                        <exclude>src/test/resources/**</exclude>
-                        <exclude>src/main/resources/**</exclude>
-                        <exclude>src/assembly/**</exclude>
-                        <exclude>target/generated-sources/antlr4/**</exclude>
-                    </excludes>
-                </configuration>
             </plugin>
         </plugins>
     </build>
