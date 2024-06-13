@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
+    Copyright © 2024 Ferdi Gueran (ferdi.gueran@deepshore.de)
     Copyright © 2017 Jeremy Custenborder (jcustenborder@gmail.com)
 
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,11 +21,6 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.github.jcustenborder</groupId>
-        <artifactId>maven-central-parent</artifactId>
-        <version>1.0.0</version>
-    </parent>
     <groupId>com.github.jcustenborder.kafka.connect</groupId>
     <artifactId>kafka-connect-xml-parent</artifactId>
     <version>0.2.15-SNAPSHOT</version>
