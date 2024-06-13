@@ -5,7 +5,10 @@ on:
     tags:
       - v*
     branches:
-      - *
+      - custombuild
+  pull_request:
+    branches:
+      - custombuild
 
 defaults:
   run:
