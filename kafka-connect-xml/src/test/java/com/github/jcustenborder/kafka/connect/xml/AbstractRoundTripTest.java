@@ -33,6 +33,7 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
@@ -85,6 +86,8 @@ public abstract class AbstractRoundTripTest<T extends Connectable> {
           Object exp = method.invoke(expected);
           Object act = method.invoke(actual);
 
+
+
           if (byte[].class.equals(method.getReturnType())) {
             byte[] ebytes = (byte[]) exp;
             byte[] abytes = (byte[]) act;
@@ -103,6 +106,8 @@ public abstract class AbstractRoundTripTest<T extends Connectable> {
             assertEquals(eValue.getHour(), aValue.getHour(), "hour");
             assertEquals(eValue.getMinute(), aValue.getMinute(), "minute");
             assertEquals(eValue.getSecond(), aValue.getSecond(), "second");
+          } else if (Object.class.equals(method.getReturnType())){
+            assertEquals(exp, act, String.format("%s should match.", method.getName()));
           } else {
             assertEquals(exp, act, String.format("%s should match.", method.getName()));
           }
