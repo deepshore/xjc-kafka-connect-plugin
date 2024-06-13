@@ -25,7 +25,7 @@
     <artifactId>kafka-connect-xml-parent</artifactId>
     <version>0.2.15-SNAPSHOT</version>
     <name>kafka-connect-xml-parent</name>
-    <url>https://github.com/jcustenborder/kafka-connect-xml-parent</url>
+    <url>https://github.com/deepshore/xjc-kafka-connect-plugin</url>
     <inceptionYear>2017</inceptionYear>
     <packaging>pom</packaging>
     <modules>
@@ -48,15 +48,23 @@
                 <role>maintainer</role>
             </roles>
         </developer>
+        <developer>
+            <name>Ferdi Gueran</name>
+            <email>ferdi.gueran@deepshore.de</email>
+            <url>https://github.com/deepshore</url>
+            <roles>
+                <role>maintainer</role>
+            </roles>
+        </developer>
     </developers>
     <scm>
-        <connection>scm:git:https://github.com/jcustenborder/kafka-connect-xml-parent.git</connection>
-        <developerConnection>scm:git:git@github.com:jcustenborder/kafka-connect-xml-parent.git</developerConnection>
-        <url>https://github.com/jcustenborder/kafka-connect-xml-parent</url>
+        <connection>scm:git:https://github.com/deepshore/xjc-kafka-connect-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:deepshore/xjc-kafka-connect-plugin.git</developerConnection>
+        <url>https://github.com/deepshore/xjc-kafka-connect-plugin</url>
     </scm>
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/jcustenborder/kafka-connect-xml-parent/issues</url>
+        <url>https://github.com/deepshore/xjc-kafka-connect-plugin/issues</url>
     </issueManagement>
     <properties>
         <java.version>17</java.version>
@@ -69,6 +77,7 @@
         <junit.surefire.plugin.version>1.0.0</junit.surefire.plugin.version>
         <mockito.version>1.10.19</mockito.version>
         <kafka.version>3.7.0</kafka.version>
+        <spotbugs.version>4.8.5</spotbugs.version>
     </properties>
     <dependencies>
         <dependency>
@@ -203,19 +212,21 @@
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>4.0.4</version>
+                <version>${spotbugs.version}.0</version>
                 <configuration>
                     <failOnError>false</failOnError>
                     <plugins>
-                        <plugin>
+                        <!-- https://github.com/find-sec-bugs/find-sec-bugs/issues/701 -->
+                        <!-- <plugin>
                             <groupId>com.h3xstream.findsecbugs</groupId>
                             <artifactId>findsecbugs-plugin</artifactId>
-                            <version>1.10.1</version>
-                        </plugin>
+                            <version>1.13.0</version>
+                        </plugin> -->
+
                         <plugin>
-                            <groupId>com.mebigfatguy.fb-contrib</groupId>
-                            <artifactId>fb-contrib</artifactId>
-                            <version>7.4.7</version>
+                            <groupId>com.mebigfatguy.sb-contrib</groupId>
+                            <artifactId>sb-contrib</artifactId>
+                            <version>7.6.4</version>
                         </plugin>
                     </plugins>
                 </configuration>
@@ -224,7 +235,7 @@
                     <dependency>
                         <groupId>com.github.spotbugs</groupId>
                         <artifactId>spotbugs</artifactId>
-                        <version>4.1.2</version>
+                        <version>${spotbugs.version}</version>
                     </dependency>
                 </dependencies>
                 <executions>

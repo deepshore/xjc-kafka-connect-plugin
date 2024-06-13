@@ -29,7 +29,7 @@
     <artifactId>xjc-kafka-connect-plugin</artifactId>
     <version>0.2.15-SNAPSHOT</version>
     <name>xjc-kafka-connect-plugin</name>
-    <url>https://github.com/jcustenborder/xjc-kafka-connect-plugin</url>
+    <url>https://github.com/deepshore/xjc-kafka-connect-plugin</url>
     <inceptionYear>2017</inceptionYear>
     <licenses>
         <license>
@@ -47,15 +47,23 @@
                 <role>maintainer</role>
             </roles>
         </developer>
+        <developer>
+            <name>Ferdi Gueran</name>
+            <email>ferdi.gueran@deepshore.de</email>
+            <url>https://github.com/deepshore</url>
+            <roles>
+                <role>maintainer</role>
+            </roles>
+        </developer>
     </developers>
     <scm>
-        <connection>scm:git:https://github.com/jcustenborder/xjc-kafka-connect-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:jcustenborder/xjc-kafka-connect-plugin.git</developerConnection>
-        <url>https://github.com/jcustenborder/xjc-kafka-connect-plugin</url>
+        <connection>scm:git:https://github.com/deepshore/xjc-kafka-connect-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:deepshore/xjc-kafka-connect-plugin.git</developerConnection>
+        <url>https://github.com/deepshore/xjc-kafka-connect-plugin</url>
     </scm>
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/jcustenborder/xjc-kafka-connect-plugin/issues</url>
+        <url>https://github.com/deepshore/xjc-kafka-connect-plugin/issues</url>
     </issueManagement>
     <dependencies>
         <dependency>
@@ -120,7 +128,7 @@
         <dependency>
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs-annotations</artifactId>
-            <version>4.0.1</version>
+            <version>${spotbugs.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
