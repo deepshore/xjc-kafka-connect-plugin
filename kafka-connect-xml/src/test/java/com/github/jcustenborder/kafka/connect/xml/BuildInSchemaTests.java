@@ -17,7 +17,7 @@ package com.github.jcustenborder.kafka.connect.xml;
 
 import org.junit.jupiter.api.Test;
 
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBException;
 import java.io.IOException;
 
 //import simpletypes.ObjectFactory;

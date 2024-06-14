@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
+    Copyright © 2024 Ferdi Gueran (ferdi.gueran@deepshore.de)
     Copyright © 2017 Jeremy Custenborder (jcustenborder@gmail.com)
 
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,7 +29,7 @@
     <artifactId>xjc-kafka-connect-plugin</artifactId>
     <version>0.2.15-SNAPSHOT</version>
     <name>xjc-kafka-connect-plugin</name>
-    <url>https://github.com/jcustenborder/xjc-kafka-connect-plugin</url>
+    <url>https://github.com/deepshore/xjc-kafka-connect-plugin</url>
     <inceptionYear>2017</inceptionYear>
     <licenses>
         <license>
@@ -46,15 +47,23 @@
                 <role>maintainer</role>
             </roles>
         </developer>
+        <developer>
+            <name>Ferdi Gueran</name>
+            <email>ferdi.gueran@deepshore.de</email>
+            <url>https://github.com/deepshore</url>
+            <roles>
+                <role>maintainer</role>
+            </roles>
+        </developer>
     </developers>
     <scm>
-        <connection>scm:git:https://github.com/jcustenborder/xjc-kafka-connect-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:jcustenborder/xjc-kafka-connect-plugin.git</developerConnection>
-        <url>https://github.com/jcustenborder/xjc-kafka-connect-plugin</url>
+        <connection>scm:git:https://github.com/deepshore/xjc-kafka-connect-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:deepshore/xjc-kafka-connect-plugin.git</developerConnection>
+        <url>https://github.com/deepshore/xjc-kafka-connect-plugin</url>
     </scm>
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/jcustenborder/xjc-kafka-connect-plugin/issues</url>
+        <url>https://github.com/deepshore/xjc-kafka-connect-plugin/issues</url>
     </issueManagement>
     <dependencies>
         <dependency>
@@ -70,9 +79,14 @@
             <version>1.9.4</version>
         </dependency>
         <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>${jaxb.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics-tools</artifactId>
-            <version>0.12.0</version>
+            <version>1.11.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-beanutils</groupId>
@@ -92,9 +106,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>${jaxb.version}</version>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>4.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
@@ -104,7 +118,7 @@
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-core</artifactId>
-            <version>2.3.0.1</version>
+            <version>${jaxb.version}</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
@@ -114,7 +128,7 @@
         <dependency>
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs-annotations</artifactId>
-            <version>4.0.1</version>
+            <version>${spotbugs.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
