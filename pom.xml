@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.jcustenborder.kafka.connect</groupId>
     <artifactId>kafka-connect-xml-parent</artifactId>
-    <version>0.2.15-SNAPSHOT</version>
+    <version>0.2.16-SNAPSHOT</version>
     <name>kafka-connect-xml-parent</name>
     <url>https://github.com/deepshore/xjc-kafka-connect-plugin</url>
     <inceptionYear>2017</inceptionYear>
